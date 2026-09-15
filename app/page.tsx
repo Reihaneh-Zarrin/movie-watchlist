@@ -10,6 +10,7 @@ export default async function Page() {
   return (
     <div className="flex flex-col justify-center items-center">
       <h1 className="text-2xl m-2 font-bold">Demo auth page</h1>
+      <h2 className="text-xl m-2">Welcome! Either sign up or log in to continue</h2>
       <div>
         <Link className="m-2 underline" href={"/signup"}>
           Sign Up
