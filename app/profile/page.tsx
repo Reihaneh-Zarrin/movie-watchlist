@@ -9,14 +9,25 @@ export default async function ProfilePage() {
   if (!user) redirect("/login");
   const movie: Movie[] | { error: string } = await getMovie();
 
-
   if ("error" in movie) {
     return <p>{movie.error}</p>;
   }
   return (
-    <>
-      <p className="text-lg m-4">{`This is your profile ${user?.name} You can browse movies and add them to your watchlist.`}</p>
-      <SearchBar movie={movie} userId={user.id} />
-    </>
+    <div
+      className="h-64 bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/movie-bg.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-linear-to-b from-transparent to-black" />
+      <div className="relative">
+        <p className="text-3xl m-4 font-bold">
+          This is your profile {""}
+          <span className="text-[#8ACE00] ">{user?.name}</span>
+        </p>
+        <p className="mb-4 mx-4">
+          You can browse movies and add them to your watchlist
+        </p>
+        <SearchBar movie={movie} userId={user.id} />
+      </div>
+    </div>
   );
 }

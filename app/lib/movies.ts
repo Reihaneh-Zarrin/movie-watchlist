@@ -1,3 +1,4 @@
+'use server'
 import { Movie } from "@/app/lib/definitions";
 
 const accessToken = process.env.ACCESS_TOKEN?.trim();
@@ -12,7 +13,6 @@ export async function searchForMovie(query:string) {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
-        signal: AbortSignal.timeout(5000),
       },
     );
 
@@ -42,7 +42,6 @@ export async function getMovie() {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
-        signal: AbortSignal.timeout(5000),
       },
     );
 

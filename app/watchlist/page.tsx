@@ -23,7 +23,7 @@ export default async function WatchlistPage() {
       
       <Suspense fallback={<MovieSkeleton />}>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 mx-4 p-4">
-          {movieDetail.map((movie) => {
+          {movieDetail.map((movie, index) => {
             if ("error" in movie) {
               return <p key={movie.error}>{movie.error}</p>;
             }
@@ -33,7 +33,7 @@ export default async function WatchlistPage() {
                 key={movie.id}
                 className="border border-[#8ACE00] p-2 hover:scale-105 transition-transform flex flex-col items-center"
               >
-                <MovieGrid movies={movie} />
+                <MovieGrid movies={movie} index={index} />
                 <RemoveFromListButton movieId={movie.id} userId={user.id} />
               </li>
             );

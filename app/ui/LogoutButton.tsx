@@ -16,7 +16,7 @@ export default function LogoutButton() {
     <button
       onClick={handleLogout}
       disabled={isLoading}
-      className="text-sm bg-zinc-800 border border-zinc-100 p-1 font-mono"
+      className="inline-block border border-zinc-700 py-1 px-4 rounded-md"
     >
       {isLoading ? "Logging out..." : "Log out"}
     </button>

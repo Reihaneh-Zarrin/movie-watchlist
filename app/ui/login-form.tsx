@@ -24,7 +24,7 @@ export default function LoginForm() {
           name="email"
           type="email"
           placeholder="you@example.com"
-          className="border-b-2 p-2"
+          className="border-b-2 p-2 focus:border-[#8ACE00] focus:outline-none"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -35,7 +35,7 @@ export default function LoginForm() {
           id="Password"
           name="password"
           type="password"
-          className="border-b-2 p-2"
+          className="border-b-2 p-2 focus:border-[#8ACE00] focus:outline-none"
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>

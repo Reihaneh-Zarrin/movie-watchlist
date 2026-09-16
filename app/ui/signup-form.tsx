@@ -26,7 +26,7 @@ export default function SignupForm() {
             name="name"
             type="text"
             placeholder="John Doe"
-            className="border-b-2 p-2"
+            className="border-b-2 p-2 focus:border-[#8ACE00] focus:outline-none"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -42,7 +42,7 @@ export default function SignupForm() {
             name="email"
             type="email"
             placeholder="you@example.com"
-            className="border-b-2 p-2"
+            className="border-b-2 p-2 focus:border-[#8ACE00] focus:outline-none"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -58,7 +58,7 @@ export default function SignupForm() {
             name="password"
             type="password"
             placeholder=""
-            className="border-b-2 p-2"
+            className="border-b-2 p-2 focus:border-[#8ACE00] focus:outline-none"
             onChange={(e) => setPassword(e.target.value)}
           />
 
