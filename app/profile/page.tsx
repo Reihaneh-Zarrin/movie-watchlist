@@ -17,7 +17,7 @@ export default async function ProfilePage() {
       className="relative h-64 bg-cover bg-center"
       style={{ backgroundImage: "url('/images/movie-bg.jpg')" }}
     >
-      <div className="absolute inset-0 bg-linear-to-b from-transparent to-black" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent to-zinc-900" />
       <div className="relative">
         <p className="text-3xl m-4 font-bold">
           This is your profile {""}
