@@ -14,14 +14,14 @@ export default async function ProfilePage() {
   }
   return (
     <div
-      className="h-64 bg-cover bg-center"
+      className="relative h-64 bg-cover bg-center"
       style={{ backgroundImage: "url('/images/movie-bg.jpg')" }}
     >
       <div className="absolute inset-0 bg-linear-to-b from-transparent to-black" />
       <div className="relative">
         <p className="text-3xl m-4 font-bold">
           This is your profile {""}
-          <span className="text-[#8ACE00] ">{user?.name}</span>
+          <span className="text-green-500 ">{user?.name}</span>
         </p>
         <p className="mb-4 mx-4">
           You can browse movies and add them to your watchlist

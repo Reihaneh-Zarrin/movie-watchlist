@@ -21,8 +21,7 @@ export default function AddToWatchList({
 
   return (
         <button
-          className="border rounded p-1 hover:bg-zinc-600 w-full mt-auto disabled:opacity-50
-    disabled:cursor-not-allowed"
+          className="border border-green-950 rounded p-1 hover:bg-zinc-600 w-full mt-auto disabled:opacity-50 disabled:cursor-not-allowed shadow-[inset_0_0_5px_#8ACE00]"
           onClick={handleAddToList}
           disabled={isInWatchlist}
         >

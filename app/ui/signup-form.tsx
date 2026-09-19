@@ -18,7 +18,7 @@ export default function SignupForm() {
 
   return (
     <>
-      <div className="flex flex-col p-3 bg-zinc-800 border border-[#8ACE00]">
+      <div className="flex flex-col p-3 bg-zinc-800 border border-green-900">
         <div className="flex flex-col">
           <label className="font-black">Name</label>
           <input
@@ -26,7 +26,7 @@ export default function SignupForm() {
             name="name"
             type="text"
             placeholder="John Doe"
-            className="border-b-2 p-2 focus:border-[#8ACE00] focus:outline-none"
+            className="border-b-2 p-2 focus:border-green-900 focus:outline-none"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -42,7 +42,7 @@ export default function SignupForm() {
             name="email"
             type="email"
             placeholder="you@example.com"
-            className="border-b-2 p-2 focus:border-[#8ACE00] focus:outline-none"
+            className="border-b-2 p-2 focus:border-green-900 focus:outline-none"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -58,7 +58,7 @@ export default function SignupForm() {
             name="password"
             type="password"
             placeholder=""
-            className="border-b-2 p-2 focus:border-[#8ACE00] focus:outline-none"
+            className="border-b-2 p-2 focus:border-green-900 focus:outline-none"
             onChange={(e) => setPassword(e.target.value)}
           />
 
@@ -66,7 +66,7 @@ export default function SignupForm() {
             <p className="text-red-500">{result.errors.password}</p>
           )}
         </div>
-        <button className="border mt-3 transition-transform hover:scale-105 bg-[#8ACE00] font-mono" disabled={loading} onClick={handleSubmit}>
+        <button className="border mt-3 transition-transform hover:scale-105 bg-green-900 font-mono" disabled={loading} onClick={handleSubmit}>
           {loading? "Signing up...":"Sign Up"}
         </button>
         {result?.message && <p className="text-red-500">{result.message}</p>}

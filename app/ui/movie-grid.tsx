@@ -19,16 +19,8 @@ export default function MovieGrid({
       : "h-52";
 
   return (
-    <div
-      className={
-        horizontal
-          ? "flex flex-row items-center gap-4 w-full"
-          : "flex flex-col w-full"
-      }
-    >
-      <div
-        className={`relative rounded-xl overflow-hidden ${posterHeight} ${!horizontal && "w-full"}`}
-      >
+    <div className={horizontal? "flex flex-row items-center gap-4 w-full": "flex flex-col w-full"}>
+      <div className={`relative rounded-xl overflow-hidden ${posterHeight} ${!horizontal && "w-full"}`}>
         <Image
           src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
           fill
@@ -38,18 +30,15 @@ export default function MovieGrid({
       </div>
 
       <div className={horizontal ? "flex flex-col" : "mt-3"}>
+
         <p className={featured ? "text-2xl font-bold" : "font-semibold"}>
           {movies.title}
         </p>
-        <p
-          className={
-            featured
-              ? "text-3xl font-bold text-[#8ACE00] mt-2"
-              : "text-lg font-bold text-[#8ACE00]"
-          }
-        >
+
+        <p className={featured ? "text-3xl font-bold text-green-500 mt-2":"text-lg font-bold text-green-500"}>
           {movies.vote_average.toFixed(1)}/10
         </p>
+
       </div>
     </div>
   );

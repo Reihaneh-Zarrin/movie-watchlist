@@ -15,7 +15,7 @@ export default async function NavBar() {
       <div className="flex flex-col md:flex-row justify-between items-center p-2 border-b">
         <Link href={"/"} className="font-[anton] text-2xl">
         <span>Pro </span>
-        <span className="text-[#8ACE00]">Watchlist</span>
+        <span className="text-green-900">Watchlist</span>
         </Link>
         <div className="space-x-4  max-md:my-2">
           <Link
@@ -37,16 +37,16 @@ export default async function NavBar() {
   } else {
     return (
       <div className="flex flex-col md:flex-row justify-between items-center p-2 border-b border-green-950">
-        <Link href={"/"} className="font-[anton] text-2xl">
+        <Link href={"/"} className="font-[anton] text-2xl mx-4 my-2">
           <span>Pro </span>
-          <span className="text-[#8ACE00]">Watchlist</span>
+          <span className="text-green-500">Watchlist</span>
         </Link>
         <div className="space-x-4  max-md:my-2">
           <Suspense fallback={<div className="w-10 h-5 bg-zinc-700 rounded animate-pulse"/>}>
           <span className="">Hello {user.name}!</span>
           </Suspense>
           <Link
-            className="inline-block border border-[#8ACE00] py-1 px-4 rounded-md shadow-[inset_0_0_5px_#8ACE00]"
+            className="inline-block border border-green-900 py-1 px-4 rounded-md shadow-[inset_0_0_5px_#8ACE00]"
             href={"/watchlist"}
           >
             Watchlist
