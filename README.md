@@ -6,14 +6,13 @@ This is purely a showcase project, not a production app. It connects to [The Mov
 
 ## Screenshots
 #### The main page
-
-<img width="1903" height="879" alt="Homepage" src="https://github.com/user-attachments/assets/6c673c50-7d62-4d57-acf7-004f4138354f" />
+<img width="1901" height="1080" alt="Screenshot 1" src="https://github.com/user-attachments/assets/45e42612-6d0e-4d63-ab80-378bb00d9d0d" />
 
 #### Login and Signup page
 
 <p align="center">
-  <img width="48%" alt="Screenshot 2" src="https://github.com/user-attachments/assets/78fdf76b-bbef-4737-a352-01f0bffb7bc6" />
-  <img width="48%" alt="Screenshot 3" src="https://github.com/user-attachments/assets/24f5e367-e8f3-4a7a-b153-615b1b3b345d" />
+  <img width="48%" alt="Screenshot 2"src="https://github.com/user-attachments/assets/d7323f95-daf6-4bd2-ad4a-af07de267e1e" />
+<img  width="48%" alt="Screenshot 3" src="https://github.com/user-attachments/assets/a47f2815-8cba-43bb-99ad-46ff6daf1307" />
 </p>
 
 ## Features
