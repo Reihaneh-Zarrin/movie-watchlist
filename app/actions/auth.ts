@@ -78,6 +78,14 @@ export async function addToWatchlist(movieId: number) {
   movieDb.addToWatchlist(userId as string, movieId);
 }
 
-export async function removeFromWatchlist(userId: string, movieId: number) {
-  movieDb.removeFromWatchlist(userId, movieId);
+export async function removeFromWatchlist(movieId: number) {
+    const session = await getUser();
+  const userId = session?.id;
+  movieDb.removeFromWatchlist(userId as string, movieId);
+}
+
+export async function isMovieInWatchlist(movieId: number) {
+  const session = await getUser();
+  const userId = session?.id;
+  return movieDb.isMovieInWatchlist(userId as string, movieId);
 }

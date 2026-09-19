@@ -1,20 +1,15 @@
-'use server'
+"use server";
 import { Movie } from "@/app/lib/definitions";
 
 const accessToken = process.env.ACCESS_TOKEN?.trim();
 
-export async function searchForMovie(query:string) {
-  console.log(accessToken);
-
+async function fetchMovies(url: string) {
   try {
-    const res = await fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&language=en-US&page=1`,
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
+    const res = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
       },
-    );
+    });
 
     if (!res.ok) {
       return {
@@ -24,44 +19,14 @@ export async function searchForMovie(query:string) {
 
     const data: any = await res.json();
 
-    const movies: Movie[] = data.results.filter(isValidMovie) as Movie[];
+    const movies: Movie[] = data.results.filter(isValidMovie);
 
     return movies;
   } catch (error) {
     return { error: `could not fetch movies: ${error}` };
   }
 }
-
-export async function getMovie() {
-  console.log(accessToken);
-
-  try {
-    const res = await fetch(
-      "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      },
-    );
-
-    if (!res.ok) {
-      return {
-        error: `could not fetch movies: ${res.status}, ${await res.text()}`,
-      };
-    }
-
-    const data: any = await res.json();
-
-    const movies: Movie[] = data.results.filter(isValidMovie) as Movie[];
-
-    return movies;
-  } catch (error) {
-    return { error: `could not fetch movies: ${error}` };
-  }
-}
-
-export async function getMovieById(id: number) {
+export async function getMovieById(id: number){
   try {
     const res = await fetch(`https://api.themoviedb.org/3/movie/${id}`, {
       headers: {
@@ -70,16 +35,33 @@ export async function getMovieById(id: number) {
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch movie");
+      return {
+        error: `could not fetch movie: ${res.status}, ${await res.text()}`,
+      };
     }
 
-    const data = await res.json();
+    const data: any = await res.json();
 
-    return data;
+    if (!isValidMovie(data)) {
+      return { error: "Invalid movie data" };
+    }
+
+    return data as Movie;
   } catch (error) {
     return { error: `could not fetch movie: ${error}` };
   }
 }
+
+export async function searchForMovie(query: string){
+  const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&language=en-US&page=1`;
+  return fetchMovies(url);
+}
+
+export async function getMovie() {
+  const url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`;
+  return await fetchMovies(url);
+}
+
 
 function isValidMovie(movie: any): boolean {
   if (typeof movie.id !== "number") return false;

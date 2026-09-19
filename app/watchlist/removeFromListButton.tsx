@@ -4,15 +4,13 @@ import { useRouter } from "next/navigation";
 
 export default function RemoveFromListButton({
   movieId,
-  userId,
 }: {
   movieId: number;
-  userId: string;
 }) {
   const router = useRouter();
 
   async function handleRemoveFromList() {
-    removeFromWatchlist(userId, movieId);
+    removeFromWatchlist(movieId);
     router.refresh();
   }
 
